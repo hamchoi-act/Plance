@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tìm kiếm Map</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="map-view-page">
+    <div id="gg-map"></div>
+    <button class="btn btn-primary btn-map" data-toggle="modal" data-target="#modal-menu">Danh Sách</button>
+    <div class="modal fade" id="modal-menu" tabindex="-1" role="dialog" aria-labelledby="MenuTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link" id="one-tab" data-toggle="tab" href="#one" role="tab" aria-controls="One" aria-selected="true"><strong>Danh Sách Files</strong></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="two-tab" data-toggle="tab" href="#two" role="tab" aria-controls="Two" aria-selected="false"><strong>Thống kê</strong></a>
+                        </li>
+
+                    </ul>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div style="display: none" class="tab-pane fade show active p-3" id="one" role="tabpanel" aria-labelledby="one-tab">
+                        <div id="menu">
+                            <table class="table table-striped">
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div style="display: none" class="tab-pane fade p-3" id="two" role="tabpanel" aria-labelledby="two-tab">
+                        <div id="statistics">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" width="30%">Địa chỉ</th>
+                                        <th scope="col" width="30%">Tên</th>
+                                        <th scope="col" width="20%">Sao chép GGMap</th>
+                                        <th scope="col" width="20%">Thời gian</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+<!--                    <button type="button" class="btn btn-primary">Save changes</button>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <script>
+        var initLat = 21.3060399;
+        var initLng = 105.5572619;
+
+        function initMap() {
+            mapRipt = new google.maps.Map(document.getElementById('gg-map'), {
+                center: { lat: initLat, lng: initLng },
+                zoom: 12,
+                zoomControl: true,
+                fullscreenControl: true
+            });
+        }
+    </script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDLfydO7oVEqv6I_Brqfk8X_wYcDByUfzM&libraries=geometry,places&callback=initMap"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="handle.js"></script>
+</body>
+</html>

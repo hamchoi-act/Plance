@@ -1,0 +1,39 @@
+#gg-map {
+    width: 100%;
+    height: 100vh;
+}
+
+.custom-checkbox {
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.btn-map {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 10000;
+}
+
+.show { display: block !important;}
+
+.modal-body{
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.red {
+    color: red;
+    font-weight: bold;
+}
+
+.black {
+    color: black;
+    font-weight: bold;
+}
+
+p.disabled { color: #ccc }
+
+
